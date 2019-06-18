@@ -13,7 +13,6 @@ const HeaderWrapper = styled.div`
   justify-items: center;
   align-items: center;
   padding: 2em;
-  text-align: center;
 
   h1 {
     margin: 0;
@@ -41,7 +40,7 @@ const Header = ({ siteTitle }) => (
   <HeaderWrapper>
     <div>
       <h1><Link to="/" style={linkStyle}>{siteTitle}</Link></h1>
-      <p>website coming soon</p>
+      <p>Cupcake ipsum dolor. Sit amet marshmallow topping cheesecake muffin. Halvah croissant candy canes bonbon candy. </p>
     </div>
     <Image style={logoStyles}/>
   </HeaderWrapper>
