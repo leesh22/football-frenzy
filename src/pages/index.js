@@ -44,7 +44,7 @@ const Footer = styled.div`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home of local football" />
     <ServiceWrapper>
       <div>
         <h3>service 1</h3>
