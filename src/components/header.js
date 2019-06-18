@@ -1,33 +1,38 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Image from "./image"
+
+
+const headerStyles ={
+  background: `#0a1f2a`,
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  justifyItems: "center",
+  alignItems: "center",
+  padding: "2em",
+  textAlign: "center",
+  color: "white"
+}
+
+const logoStyles = {
+  width: "400px"
+}
+
+const linkStyle = {
+  color: `white`,
+  textDecoration: `none`,
+}
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+  <header style={headerStyles}>
+    <div>
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+        <Link to="/" style={linkStyle}>{siteTitle}</Link>
       </h1>
+      <p>website coming soon</p>
     </div>
+    <Image style={logoStyles}/>
   </header>
 )
 

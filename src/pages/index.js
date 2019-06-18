@@ -1,20 +1,38 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+
+const serviceStyles = {
+  background: "#d02935",
+  color: "white",
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr 1fr",
+  justifyItems: "center",
+  alignItems: "center",
+  padding: "2em",
+  textAlign: "center"
+}
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div style={serviceStyles}>
+      <div>
+        <h3>service 1</h3>
+        <p>Welcome to your new Gatsby site.</p>
+      </div>
+      <div>
+        <h3>service 2</h3>
+        <p>Welcome to your new Gatsby site.</p>
+      </div>
+      <div>
+        <h3>service 3</h3>
+        <p>Welcome to your new Gatsby site.</p>
+      </div>
+
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+
   </Layout>
 )
 
