@@ -1,22 +1,35 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components";
+
 import Image from "./image"
 
+const HeaderWrapper = styled.div`
+  background: #0a1f2a;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 2em;
+  text-align: center;
 
-const headerStyles ={
-  background: `#0a1f2a`,
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  justifyItems: "center",
-  alignItems: "center",
-  padding: "2em",
-  textAlign: "center",
-  color: "white"
-}
+  h1 {
+    margin: 0;
+  }
+
+  @media only screen and (max-width: 667px) {
+    grid-template-columns: 1fr;
+
+    h1, p {
+      margin-bottom: 20px;
+    }
+  }
+`
 
 const logoStyles = {
-  width: "400px"
+  width: "55%"
 }
 
 const linkStyle = {
@@ -25,15 +38,13 @@ const linkStyle = {
 }
 
 const Header = ({ siteTitle }) => (
-  <header style={headerStyles}>
+  <HeaderWrapper>
     <div>
-      <h1 style={{ margin: 0 }}>
-        <Link to="/" style={linkStyle}>{siteTitle}</Link>
-      </h1>
+      <h1><Link to="/" style={linkStyle}>{siteTitle}</Link></h1>
       <p>website coming soon</p>
     </div>
     <Image style={logoStyles}/>
-  </header>
+  </HeaderWrapper>
 )
 
 Header.propTypes = {
