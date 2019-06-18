@@ -30,7 +30,6 @@ const Header = ({ siteTitle }) => (
       <h1 style={{ margin: 0 }}>
         <Link to="/" style={linkStyle}>{siteTitle}</Link>
       </h1>
-      <p>website coming soon</p>
     </div>
     <Image style={logoStyles}/>
   </header>
