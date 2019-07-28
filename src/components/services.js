@@ -36,7 +36,7 @@ const ItemWrapper = styled.div`
   }
 
   @media only screen and (max-width: 500px) {
-    padding: 0;
+    padding: 1.5em 0;
   }
 `
 
