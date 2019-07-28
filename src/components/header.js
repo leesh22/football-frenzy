@@ -3,8 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components";
 import {COPY} from "../constants";
-
-import Image from "./image"
+import ImageHolder from '../components/imageHolder';
 
 const HeaderWrapper = styled.div`
   background: #0a1f2a;
@@ -13,7 +12,8 @@ const HeaderWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
-  padding: 5em 2em;
+  padding: 3em;
+  width: 100%;
 
 
   @media only screen and (max-width: 667px) {
@@ -25,9 +25,13 @@ const HeaderWrapper = styled.div`
   }
 `
 
-const logoStyles = {
-  width: "55%"
-}
+const LogoImage = styled(ImageHolder)`
+  width: 50%;
+
+  @media only screen and (max-width: 667px) {
+    grid-row-start: 1;
+  }
+`
 
 const Title = styled.h1`
   margin-bottom: 1em;
@@ -39,7 +43,16 @@ const Title = styled.h1`
 `
 
 const WrapperStyle = styled.div`
-  padding: 5em;
+  padding: 3em;
+
+  @media only screen and (max-width: 1025px) {
+    padding: 1em;
+  }
+
+  @media only screen and (max-width: 1025px) {
+    text-align: center;
+    margin-top: 50px;
+  }
 `
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
@@ -47,7 +60,7 @@ const Header = ({ siteTitle }) => (
       <Title><Link to="/">{siteTitle}</Link></Title>
       <p>{COPY.headerDescription}</p>
     </WrapperStyle>
-    <Image style={logoStyles} src="ff-logo.png"/>
+    <LogoImage filename="ff-logo.png"/>
   </HeaderWrapper>
 )
 
