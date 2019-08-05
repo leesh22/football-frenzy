@@ -2,8 +2,8 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components";
-
-import Image from "./image"
+import {COPY} from "../constants";
+import ImageHolder from '../components/imageHolder';
 
 const HeaderWrapper = styled.div`
   background: #0a1f2a;
@@ -12,12 +12,9 @@ const HeaderWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
-  padding: 2em;
-  text-align: center;
+  padding: 3em;
+  width: 100%;
 
-  h1 {
-    margin: 0;
-  }
 
   @media only screen and (max-width: 667px) {
     grid-template-columns: 1fr;
@@ -28,22 +25,42 @@ const HeaderWrapper = styled.div`
   }
 `
 
-const logoStyles = {
-  width: "55%"
-}
+const LogoImage = styled(ImageHolder)`
+  width: 50%;
 
-const linkStyle = {
-  color: `white`,
-  textDecoration: `none`,
-}
+  @media only screen and (max-width: 667px) {
+    grid-row-start: 1;
+  }
+`
 
+const Title = styled.h1`
+  margin-bottom: 1em;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+`
+
+const WrapperStyle = styled.div`
+  padding: 3em;
+
+  @media only screen and (max-width: 1025px) {
+    padding: 1em;
+  }
+
+  @media only screen and (max-width: 1025px) {
+    text-align: center;
+    margin-top: 50px;
+  }
+`
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
-    <div>
-      <h1><Link to="/" style={linkStyle}>{siteTitle}</Link></h1>
-      <p>website coming soon</p>
-    </div>
-    <Image style={logoStyles}/>
+    <WrapperStyle>
+      <Title><Link to="/">{siteTitle}</Link></Title>
+      <p>{COPY.headerDescription}</p>
+    </WrapperStyle>
+    <LogoImage filename="ff-logo.png"/>
   </HeaderWrapper>
 )
 
